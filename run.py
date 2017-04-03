@@ -3,8 +3,9 @@ from flask import Flask, request, render_template
 import shlex
 from subprocess import Popen, PIPE
 
-root_dir = '/home/pi/hal-run'
+root_dir = '/home/pi/hal-run/hal-run-app'
 music_dir = root_dir + '/static/music'
+effects_dir = root_dir + '/static/effects'
 
 app = Flask(__name__)
 
