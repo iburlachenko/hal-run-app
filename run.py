@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 import shlex
 from subprocess import Popen, PIPE
 
-root_dir = '/home/ivan/hal-run'
+root_dir = '/home/pi/hal-run'
 music_dir = root_dir + '/static/music'
 
 app = Flask(__name__)
