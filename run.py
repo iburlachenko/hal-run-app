@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request, render_template
 import shlex
 from subprocess import Popen, PIPE
-import psutils
+import psutil
 
 root_dir = '/home/pi/hal-run/hal-run-app'
 music_dir = root_dir + '/static/music'
