@@ -16,30 +16,7 @@
 
     <!-- Custom CSS -->
     <style>
-  		/*
-	    .cont-table {
-	    	display: table;
-	    } 
-
-	    .col-cell {
-	    	display: table-cell;
-	    	background-repeat: red;
-	    }
-	    */
-
-	    /**,
-		::after,
-		::before {
-		    -webkit-box-sizing: inherit;
-		    box-sizing: inherit
-		}
-
-		html {
-		    -webkit-box-sizing: border-box;
-		    box-sizing: border-box;
-		}
-*/
-	    .clearfix::before {
+  	    .clearfix::before {
 	    	content: " ";
 	    	display: table;
 	    	clear: both
@@ -53,10 +30,18 @@
 
 		.run {
 			padding-top: 20px;
+			min-height: 100px;
+			background: #ff0000;
+			
+		}
+
+		.run--centered { /*make run btn centered in block with fixed height*/
+			padding-top: 20px;
 			min-height: 168px;
 			background: #ff0000;
 			vertical-align: middle;
 		}
+
 		.voice {
 			padding-top: 20px;
 			min-height: 10px;
@@ -87,7 +72,7 @@
 		}
 
 
-		.cb-btn--run {
+		.cb-btn--run-centered { { /*make run btn centered in block with fixed height*/
 			margin-top: 40px;
 		}
 
@@ -143,7 +128,7 @@
 						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
 					</div>
 					<div class="col-xs-12  text-center run">
-						<a class="cb-btn cb-btn--run cb-btn--red" href="#">Цикл эффектов</a>
+						<a class="cb-btn cb-btn--red" href="#">Цикл эффектов</a>
 					</div>
 				</div>
 			</div>
