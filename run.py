@@ -2,6 +2,7 @@ import os
 from flask import Flask, jsonify, request, render_template
 import shlex
 from subprocess import Popen, PIPE
+import psutils
 
 root_dir = '/home/pi/hal-run/hal-run-app'
 music_dir = root_dir + '/static/music'
@@ -24,8 +25,11 @@ def get_exitcode_stdout_stderr(cmd):
     return exitcode, out, err
 
 def clearEffects():
-    cmd = "kill -9 " + app.config["curr_effect"]
-    get_exitcode_stdout_stderr(cmd); # remove previous effect
+    effect_process = filter(lambda p: p.name == app.config["curr_effect"], psutil.process_iter())
+    for p in effect_process:
+        print("Killed - " + p.name +" = " + p.pid)
+        p.kill()
+    
 
 @app.route('/')
 @app.route('/home')
