@@ -1,3 +1,4 @@
+ 		
  		.clearfix::before {
 	    	content: " ";
 	    	display: table;
@@ -16,7 +17,7 @@
 			background: #ff0000;
 			
 		}
-
+		
 		.run--centered { /*make run btn centered in block with fixed height*/
 			padding-top: 20px;
 			min-height: 168px;
@@ -52,30 +53,29 @@
 			text-decoration: none;
 			margin-bottom: 20px;
 		}
+		.cb-btn:hover {
+			text-decoration: none;
+		}
 
 
-		.cb-btn--run-centered { { /*make run btn centered in block with fixed height*/
+		.cb-btn--run-centered { /*make run btn centered in block with fixed height*/
 			margin-top: 40px;
 		}
 
 		.cb-btn--green:hover {
-			background: #ffffff !important;
-			text-decoration: !important;
-			color: #00d600 !important;
+			background: #ffffff;
+			color: #00d600;
 		}
 
 		.cb-btn--red:hover {
-			background: #ffffff !important;
-			text-decoration: none !important;
-			color: #ff0000 !important;
+			background: #ffffff;
+			color: #ff0000;
 		}
 		.cb-btn--blue:hover {
-			background: #ffffff !important;
-			text-decoration: none !important;
-			color: #5700e9 !important;
+			background: #ffffff;
+			color: #5700e9;
 		}
 		.cb-btn--yellow:hover {
-			background: #ffffff !important;
-			text-decoration: none !important;
-			color: #ffe800 !important;
+			background: #ffffff;
+			color: #ffe800;
 		}
