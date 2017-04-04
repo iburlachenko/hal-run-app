@@ -6,6 +6,7 @@ from subprocess import Popen, PIPE
 root_dir = '/home/pi/hal-run/hal-run-app'
 music_dir = root_dir + '/static/music'
 effects_dir = root_dir + '/static/effects'
+curr_effect = None
 
 app = Flask(__name__)
 
@@ -31,13 +32,18 @@ def index():
                         music_files_number = music_files_number,
                         music_files = music_files)
 
-@app.route('/arc')
+@app.route('/ef/<effect_name>')
 def start_Arc_effect():
-    cmd = "./static/effects/arc_demo"
+    cmd = "pkill " + curr_effect 
+    get_exitcode_stdout_stderr(cmd); # remove previous effect
+    app_name = effect_name + "_demo"
+    curr_effect = app_name
+    cmd = "./static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+
     
 
-@app.route('/<filename>')
+@app.route('/pl/<filename>')
 def song(filename):
     return render_template('play.html',
                         title = filename,
