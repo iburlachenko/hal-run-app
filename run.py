@@ -10,7 +10,7 @@ effects_dir = root_dir + '/static/effects'
 
 
 app = Flask(__name__)
-app.config['curr_effect'] = "arc"
+app.config['curr_effect'] = "None"
 
 def get_exitcode_stdout_stderr(cmd):
     """
@@ -40,7 +40,7 @@ def index():
 
 @app.route('/ef/<effect_name>')
 def start_effect(effect_name=None):
-    if effect_name is not app.config['curr_effect']:
+    if effect_name == app.config['curr_effect']:
         clearEffects()
         app_name = effect_name
         app.config["curr_effect"] = app_name
