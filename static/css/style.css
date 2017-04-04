@@ -59,23 +59,23 @@
 		}
 
 		.cb-btn--green:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #00d600;
+			background: #ffffff !important;
+			text-decoration: !important;
+			color: #00d600 !important;
 		}
 
 		.cb-btn--red:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #ff0000;
+			background: #ffffff !important;
+			text-decoration: none !important;
+			color: #ff0000 !important;
 		}
 		.cb-btn--blue:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #5700e9;
+			background: #ffffff !important;
+			text-decoration: none !important;
+			color: #5700e9 !important;
 		}
 		.cb-btn--yellow:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #ffe800;
+			background: #ffffff !important;
+			text-decoration: none !important;
+			color: #ffe800 !important;
 		}
