@@ -25,11 +25,16 @@ def get_exitcode_stdout_stderr(cmd):
     return exitcode, out, err
 
 def clearEffects():
+    print('Trying to delete -- ' + app.config["curr_effect"])
+    cmd = "sudo pkill -9 " + app.config["curr_effect"]
+    print('Command is ['+ cmd +']')
+    get_exitcode_stdout_stderr(cmd);
+    '''
     effect_process = filter(lambda p: p.name == app.config["curr_effect"], psutil.process_iter())
     for p in effect_process:
         print("Killed - " + p.name +" = " + p.pid)
         p.kill()
-    
+    '''
 
 @app.route('/')
 @app.route('/home')
