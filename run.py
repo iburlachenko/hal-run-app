@@ -33,7 +33,7 @@ def index():
 
 @app.route('/arc')
 def start_Arc_effect():
-    cmd = "./static/music/arc_demo"
+    cmd = "./static/effects/arc_demo"
     get_exitcode_stdout_stderr(cmd);
     
 
@@ -42,6 +42,9 @@ def song(filename):
     return render_template('play.html',
                         title = filename,
                         music_file = filename)
+def sounds_cleaner():
+    #while (true) monitoring sounds dir
+    pass
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', debug = True)
