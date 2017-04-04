@@ -37,10 +37,11 @@ def index():
 def start_ffect(self, effect_name=None):
     cmd = "pkill " + self.app.config["curr_effect"]
     get_exitcode_stdout_stderr(cmd); # remove previous effect
-    app_name = effect_name + "_demo"
+    app_name = effect_name
     self.app.config["curr_effect"] = app_name
     cmd = "./static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+    return jsonify(status = 'success')
 
     
 
