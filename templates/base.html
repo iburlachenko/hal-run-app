@@ -53,7 +53,7 @@
 
 		.run {
 			padding-top: 20px;
-			min-height: 165px;
+			min-height: 168px;
 			background: #ff0000;
 			vertical-align: middle;
 		}
@@ -88,7 +88,7 @@
 
 
 		.cb-btn--run {
-			margin-top: 50px;
+			margin-top: 40px;
 		}
 
 		.cb-btn--green:hover {
@@ -143,24 +143,22 @@
 						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
 					</div>
 					<div class="col-xs-12  text-center run">
-						<a class="cb-btn cb-btn--run cb-btn--red" href="#">Effect 2</a>
-						
-						
+						<a class="cb-btn cb-btn--run cb-btn--red" href="#">Цикл эффектов</a>
 					</div>
 				</div>
 			</div>
 	        <div class="col-sm-6 outer ">
 				<div class="row">
 					<div class="col-xs-12 text-center voice">
-						<a class="cb-btn cb-btn--red" href="#">Effect 2</a>
+						<a class="cb-btn cb-btn--blue" href="#">Услышать ребенка</a>
 					</div>
-
 					<div class="col-xs-12 text-center list">
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
+						{% block play%}{% endblock %}
+						<a class="cb-btn cb-btn--yellow" href="#">Записать сообщение</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
 					</div>
 				</div>
 	        </div>
@@ -170,7 +168,7 @@
 
 	</div>
     <!-- /.container -->
-	{% block play%}{% endblock %}
+	
     <!-- jQuery Version 1.11.1 -->
     <script src="../static/js/jquery.js"></script>
 
