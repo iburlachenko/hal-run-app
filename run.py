@@ -42,6 +42,7 @@ def index():
 def start_effect(effect_name=None):
     print('-new eff->' + effect_name)
     print('-old eff->' + app.config['curr_effect'])
+    print((effect_name != app.config['curr_effect']))
     if (effect_name != app.config['curr_effect']):
         clearEffects()
         app_name = effect_name
