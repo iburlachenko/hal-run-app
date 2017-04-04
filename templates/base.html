@@ -14,94 +14,23 @@
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript">
-    
+
+		$(document).ready(function(){
+		    $("a .effect").on("click", function(){
+		    	debugger
+		        $.ajax({
+		        	url: "/ef/",
+		        	success: function(result){
+	        			//$("#div1").html(result);
+	        			console.log()
+			    	}
+				});
+		    });
+		});
+
     </script>
     <!-- Custom CSS -->
-    <style>
-  	    
-  	    .clearfix::before {
-	    	content: " ";
-	    	display: table;
-	    	clear: both
-		}
-
-    	.effects {
-    		padding-top: 20px;
-			min-height: 100px;
-			background: #00d600;
-		}
-
-		.run {
-			padding-top: 20px;
-			min-height: 100px;
-			background: #ff0000;
-			
-		}
-
-		.run--centered { /*make run btn centered in block with fixed height*/
-			padding-top: 20px;
-			min-height: 168px;
-			background: #ff0000;
-			vertical-align: middle;
-		}
-
-		.voice {
-			padding-top: 20px;
-			min-height: 10px;
-			background: #5700e9;
-		}
-		.list {
-			padding-top: 20px;
-			min-height: 350px;
-			background: #ffe800;
-		}
-
-		.logo {
-			display: block;
-		    width: 50%;
-		    height: auto;
-		    margin: 10px auto 10px auto;
-		}
-
-		.cb-btn {
-			display: block;
-			font-family: Arial;
-			color: #ffffff;
-			font-size: 20px;
-			padding: 10px 20px 10px 20px;
-			border: solid #FFF 3px;
-			text-decoration: none;
-			margin-bottom: 20px;
-		}
-
-
-		.cb-btn--run-centered { { /*make run btn centered in block with fixed height*/
-			margin-top: 40px;
-		}
-
-		.cb-btn--green:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #00d600;
-		}
-
-		.cb-btn--red:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #ff0000;
-		}
-		.cb-btn--blue:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #5700e9;
-		}
-		.cb-btn--yellow:hover {
-			background: #ffffff;
-			text-decoration: none;
-			color: #ffe800;
-		}
-
-    </style>
+    <style></style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -125,10 +54,10 @@
 	        <div class="col-sm-6 outer ">
 				<div class="row">
 					<div class="col-xs-12 text-center effects ">
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
-						<a class="cb-btn cb-btn--green" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="arc_demo">Вспышка</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="everloop">Нас не догонят</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="direction_of_arrival_demo">Откуда звук?</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="mic_energy"></a>
 					</div>
 					<div class="col-xs-12  text-center run">
 						<a class="cb-btn cb-btn--red" href="#">Цикл эффектов</a>
@@ -139,6 +68,7 @@
 				<div class="row">
 					<div class="col-xs-12 text-center voice">
 						<a class="cb-btn cb-btn--blue" href="#">Услышать ребенка</a>
+						{% block play%}{% endblock %}
 					</div>
 					<div class="col-xs-12 text-center list">
 						{% block play%}{% endblock %}

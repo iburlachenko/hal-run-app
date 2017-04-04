@@ -1,0 +1,81 @@
+ 		.clearfix::before {
+	    	content: " ";
+	    	display: table;
+	    	clear: both
+		}
+
+    	.effects {
+    		padding-top: 20px;
+			min-height: 100px;
+			background: #00d600;
+		}
+
+		.run {
+			padding-top: 20px;
+			min-height: 100px;
+			background: #ff0000;
+			
+		}
+
+		.run--centered { /*make run btn centered in block with fixed height*/
+			padding-top: 20px;
+			min-height: 168px;
+			background: #ff0000;
+			vertical-align: middle;
+		}
+
+		.voice {
+			padding-top: 20px;
+			min-height: 10px;
+			background: #5700e9;
+		}
+		.list {
+			padding-top: 20px;
+			min-height: 350px;
+			background: #ffe800;
+		}
+
+		.logo {
+			display: block;
+		    width: 50%;
+		    height: auto;
+		    margin: 10px auto 10px auto;
+		}
+
+		.cb-btn {
+			display: block;
+			font-family: Arial;
+			color: #ffffff;
+			font-size: 20px;
+			padding: 10px 20px 10px 20px;
+			border: solid #FFF 3px;
+			text-decoration: none;
+			margin-bottom: 20px;
+		}
+
+
+		.cb-btn--run-centered { { /*make run btn centered in block with fixed height*/
+			margin-top: 40px;
+		}
+
+		.cb-btn--green:hover {
+			background: #ffffff;
+			text-decoration: none;
+			color: #00d600;
+		}
+
+		.cb-btn--red:hover {
+			background: #ffffff;
+			text-decoration: none;
+			color: #ff0000;
+		}
+		.cb-btn--blue:hover {
+			background: #ffffff;
+			text-decoration: none;
+			color: #5700e9;
+		}
+		.cb-btn--yellow:hover {
+			background: #ffffff;
+			text-decoration: none;
+			color: #ffe800;
+		}

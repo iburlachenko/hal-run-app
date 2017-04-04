@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request, render_template
 import shlex
 from subprocess import Popen, PIPE
 
@@ -10,6 +10,7 @@ effects_dir = root_dir + '/static/effects'
 
 
 app = Flask(__name__)
+app.config['curr_effect'] = "arc"
 
 def get_exitcode_stdout_stderr(cmd):
     """
@@ -33,11 +34,11 @@ def index():
                         music_files = music_files)
 
 @app.route('/ef/<effect_name>')
-def start_ffect(effect_name=None):
-    cmd = "pkill " + app.debug 
+def start_ffect(self, effect_name=None):
+    cmd = "pkill " + self.app.config["curr_effect"]
     get_exitcode_stdout_stderr(cmd); # remove previous effect
     app_name = effect_name + "_demo"
-    curr_effect = app_name #comments
+    self.app.config["curr_effect"] = app_name
     cmd = "./static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
 
@@ -54,5 +55,4 @@ def sounds_cleaner():
     pass
 
 if __name__ == '__main__':
-    app.config['curr_effect'] = "arc"
     app.run(host = '0.0.0.0', debug = True)
