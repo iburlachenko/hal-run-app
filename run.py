@@ -33,7 +33,7 @@ def index():
                         music_files = music_files)
 
 @app.route('/ef/<effect_name>')
-def start_Arc_effect():
+def start_ffect(effect_name=None):
     cmd = "pkill " + curr_effect 
     get_exitcode_stdout_stderr(cmd); # remove previous effect
     app_name = effect_name + "_demo"
