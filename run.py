@@ -40,7 +40,7 @@ def index():
 
 @app.route('/ef/<effect_name>')
 def start_effect(effect_name=None):
-    if not (effect_name == app.config['curr_effect']):
+    if (effect_name != app.config['curr_effect']):
         clearEffects()
         app_name = effect_name
         app.config["curr_effect"] = app_name
