@@ -24,7 +24,7 @@ def get_exitcode_stdout_stderr(cmd):
     return exitcode, out, err
 
 def clearEffects():
-    cmd = "pkill " + app.config["curr_effect"]
+    cmd = "kill -9 " + app.config["curr_effect"]
     get_exitcode_stdout_stderr(cmd); # remove previous effect
 
 @app.route('/')
@@ -41,7 +41,7 @@ def index():
 @app.route('/ef/<effect_name>')
 def start_effect(effect_name=None):
     print('-new eff->' + effect_name)
-    print('-new eff->' + app.config['curr_effect'])
+    print('-old eff->' + app.config['curr_effect'])
     if (effect_name != app.config['curr_effect']):
         clearEffects()
         app_name = effect_name
