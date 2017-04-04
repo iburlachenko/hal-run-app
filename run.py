@@ -23,6 +23,11 @@ def get_exitcode_stdout_stderr(cmd):
     exitcode = proc.returncode
     return exitcode, out, err
 
+def clearEffects():
+    clearEffects()
+    cmd = "pkill " + app.config["curr_effect"]
+    get_exitcode_stdout_stderr(cmd); # remove previous effect
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -35,8 +40,7 @@ def index():
 
 @app.route('/ef/<effect_name>')
 def start_effect(effect_name=None):
-    cmd = "pkill " + app.config["curr_effect"]
-    get_exitcode_stdout_stderr(cmd); # remove previous effect
+    clearEffects()
     app_name = effect_name
     app.config["curr_effect"] = app_name
     cmd = "./static/effects/" + app_name
