@@ -24,13 +24,13 @@ def get_exitcode_stdout_stderr(cmd):
     return exitcode, out, err
 
 def clearEffects():
-    clearEffects()
     cmd = "pkill " + app.config["curr_effect"]
     get_exitcode_stdout_stderr(cmd); # remove previous effect
 
 @app.route('/')
 @app.route('/home')
 def index():
+    clearEffects()
     music_files = [f for f in os.listdir(music_dir) if f.endswith('mp3')]
     music_files_number = len(music_files)
     return render_template("index.html",
@@ -40,11 +40,13 @@ def index():
 
 @app.route('/ef/<effect_name>')
 def start_effect(effect_name=None):
-    clearEffects()
-    app_name = effect_name
-    app.config["curr_effect"] = app_name
-    cmd = "./static/effects/" + app_name
-    get_exitcode_stdout_stderr(cmd);
+    if effect_name is not app.config['curr_effect']:
+        clearEffects()
+        app_name = effect_name
+        app.config["curr_effect"] = app_name
+        cmd = "./static/effects/" + app_name
+        get_exitcode_stdout_stderr(cmd);
+
     return jsonify(status = 'success')
 
     
