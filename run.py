@@ -10,7 +10,6 @@ effects_dir = root_dir + '/static/effects'
 
 
 app = Flask(__name__)
-app['curr_effect'] = None
 
 def get_exitcode_stdout_stderr(cmd):
     """
@@ -55,4 +54,5 @@ def sounds_cleaner():
     pass
 
 if __name__ == '__main__':
+    global curr_effect = None
     app.run(host = '0.0.0.0', debug = True)
