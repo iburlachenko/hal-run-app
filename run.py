@@ -37,7 +37,7 @@ def start_Arc_effect():
     cmd = "pkill " + curr_effect 
     get_exitcode_stdout_stderr(cmd); # remove previous effect
     app_name = effect_name + "_demo"
-    curr_effect = app_name
+    curr_effect = app_name #comments
     cmd = "./static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
 
