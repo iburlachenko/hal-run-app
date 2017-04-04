@@ -34,7 +34,7 @@ def index():
                         music_files = music_files)
 
 @app.route('/ef/<effect_name>')
-def start_ffect(self, effect_name=None):
+def start_effect(effect_name=None):
     cmd = "pkill " + self.app.config["curr_effect"]
     get_exitcode_stdout_stderr(cmd); # remove previous effect
     app_name = effect_name
