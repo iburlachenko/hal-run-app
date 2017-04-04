@@ -54,5 +54,5 @@ def sounds_cleaner():
     pass
 
 if __name__ == '__main__':
-    global curr_effect = None
+    app.config['curr_effect'] = "arc"
     app.run(host = '0.0.0.0', debug = True)
