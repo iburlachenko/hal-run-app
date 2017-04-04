@@ -14,22 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <link href="../static/css/style	.css" rel="stylesheet">
-    <script type="text/javascript">
-
-		$(document).ready(function(){
-		    $("a .effect").on("click", function(){
-		    	debugger
-		        $.ajax({
-		        	url: "/ef/",
-		        	success: function(result){
-	        			//$("#div1").html(result);
-	        			console.log()
-			    	}
-				});
-		    });
-		});
-
-    </script>
+    
     <!-- Custom CSS -->
     <style></style>
 
@@ -92,6 +77,22 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+		$(document).ready(function(){
+		    $("a .effect").on("click", function(){
+		    	debugger
+		        $.ajax({
+		        	url: "/ef/",
+		        	success: function(result){
+	        			//$("#div1").html(result);
+	        			console.log()
+			    	}
+				});
+		    });
+		});
+
+    </script>
 
 </body>
 
