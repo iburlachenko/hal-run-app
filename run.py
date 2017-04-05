@@ -22,6 +22,7 @@ def get_exitcode_stdout_stderr(cmd):
     proc = Popen(args, stdout=PIPE, stderr=PIPE)
     out, err = proc.communicate()
     exitcode = proc.returncode
+    print(out)
     return exitcode, out, err
 
 def clearEffects():
