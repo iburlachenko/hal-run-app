@@ -99,6 +99,7 @@ def cysle_effects():
 
 @app.route('/voice-record/')
 def voice_record():
+    clearEffects()
     print('RUN RECORDER ')
     '''
     clearEffects()
