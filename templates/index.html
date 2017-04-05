@@ -1,1 +1,37 @@
 {% extends 'base.html' %}
+{% block index %}
+		<div class="row">
+	    	<div class="col-xs-12 text-center">
+	            <img class="logo" src="../static/images/logo.png">
+	        </div>
+
+	        <div class="col-sm-6 outer ">
+				<div class="row">
+					<div class="col-xs-12 text-center effects ">
+						<a id="" class="cb-btn cb-btn--green effect" href="#" type="arc_demo">Вспышка</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="everloop_demo">Нас не догонят</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="direction_of_arrival_demo">Откуда звук?</a>
+						<a class="cb-btn cb-btn--green effect" href="#" type="mic_energy">Громкость звука</a>
+					</div>
+					<div class="col-xs-12  text-center run">
+						<a class="cb-btn cb-btn--red" href="#">Цикл эффектов</a>
+					</div>
+				</div>
+			</div>
+	        <div class="col-sm-6 outer ">
+				<div class="row">
+					<div class="col-xs-12 text-center voice">
+						<a class="cb-btn cb-btn--blue" href="#">Записать сообщение для ребенка</a>
+						{% block voice-record%}{% endblock %}
+					</div>
+					<div class="col-xs-12 text-center list">
+						<a class="cb-btn cb-btn--yellow" href="#"></a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+						<a class="cb-btn cb-btn--yellow" href="#">Effect 1</a>
+					</div>
+				</div>
+	        </div>
+	    </div>
+{%  endblock  %}

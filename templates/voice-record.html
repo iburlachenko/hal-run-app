@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block play %}
+{% block voice-record %}
 {% for i in range(music_files_number) %}
-    <p><a href="/{{ music_files[i] }}"> {{ i+1 }}) {{ music_files[i] }} </a></p>
+    <a href="static/music/{{ music_files[i] }}"> {{ i+1 }}) {{ music_files[i] }} </a></p>
 {% endfor %}
 {% endblock %}
