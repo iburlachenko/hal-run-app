@@ -18,17 +18,20 @@ def get_exitcode_stdout_stderr(cmd):
     Execute the external command and get its exitcode, stdout and stderr.
     """
     args = shlex.split(cmd)
-
+    '''
     proc = Popen(args, stdout=PIPE, stderr=PIPE)
     out, err = proc.communicate()
     exitcode = proc.returncode
     print(out)
-    return exitcode, out, err
+    '''
+    p = psutil.Popen(args, stdout=PIPE)
+    print('STARTED - ' + p.name())
+
+    
 
 def clearEffects():
     print('Trying to delete -- ' + app.config["curr_effect"])
     #cmd = 'sudo pkill -9 ' + app.config["curr_effect"]
-
     
     procName = app.config["curr_effect"]
     for proc in psutil.process_iter():
