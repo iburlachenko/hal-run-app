@@ -48,7 +48,7 @@
 
 		$(document).ready(function(){
 		    $('a[class~="effect"]').on("click", function(){
-		    	//debugger
+		    	console.log('TYpe is -- ' + this.type);
 		    	var url = ''
 		    	if (this.type === 'micarray_recorder') {
 		    		url = "/voice-record/";
