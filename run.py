@@ -26,7 +26,8 @@ def get_exitcode_stdout_stderr(cmd):
 
 def clearEffects():
     print('Trying to delete -- ' + app.config["curr_effect"])
-    cmd = 'sudo pkill -9 ' + app.config["curr_effect"]
+    #cmd = 'sudo pkill -9 ' + app.config["curr_effect"]
+    cmd='sudo python clear.py'
     get_exitcode_stdout_stderr(cmd)
     '''
     procName = app.config["curr_effect"]
