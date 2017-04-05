@@ -47,7 +47,7 @@ def start_effect(effect_name=None):
         clearEffects()
         app_name = effect_name
         app.config["curr_effect"] = app_name
-        cmd = "./static/effects/" + app_name
+        cmd = root_dir + "/static/effects/" + app_name
         get_exitcode_stdout_stderr(cmd);
 
     return jsonify(status = 'success')
@@ -58,7 +58,7 @@ def voice_record():
     app_name = 'micarray_recorder'
     if (app_name != app.config['curr_effect']):
         app.config["curr_effect"] = app_name
-        cmd = "./static/music/" + app_name
+        cmd = root_dir + "/static/music/" + app_name
         get_exitcode_stdout_stderr(cmd);
         cmd = 'sox -r 16000 -c 1 -e signed -b 16 '+music_dir+'/mic_16000_s16le_channel_0.raw '+music_dir+'/channel_0.wav'
 
