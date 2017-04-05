@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block voice-record %}
+{% block voice_record %}
 {% for i in range(music_files_number) %}
     <a href="static/music/{{ music_files[i] }}"> {{ i+1 }}) {{ music_files[i] }} </a></p>
 {% endfor %}
