@@ -92,7 +92,7 @@ def cysle_effects():
         app.config['start_cycle'] = True
         print("CYCLE_STARTED")
     
-    while (app.config['start_cycle'] = True):
+    while (app.config['start_cycle'] == True):
         group_effects()
         
         
