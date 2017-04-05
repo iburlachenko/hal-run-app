@@ -3,6 +3,8 @@ from flask import Flask, jsonify, request, render_template
 import shlex
 from subprocess import Popen, PIPE
 import psutil
+from time import sleep
+
 
 root_dir = '/home/pi/hal-run/hal-run-app'
 music_dir = root_dir + '/static/music'
@@ -59,8 +61,18 @@ def voice_record():
     if (app_name != app.config['curr_effect']):
         app.config["curr_effect"] = app_name
         cmd = root_dir + "/static/music/" + app_name
-        get_exitcode_stdout_stderr(cmd);
-        cmd = 'sox -r 16000 -c 1 -e signed -b 16 '+music_dir+'/mic_16000_s16le_channel_0.raw '+music_dir+'/channel_0.wav'
+        get_exitcode_stdout_stderr(cmd)
+        
+        sleep(12000)
+
+        file_name = 'channel_0'
+        wav_file = music_dir + '/'+file_name+'.wav'
+        cmd = 'sox -r 16000 -c 1 -e signed -b 16 ' + music_dir + '/mic_16000_s16le_channel_0.raw ' + wav_file
+        
+        get_exitcode_stdout_stderr(cmd)
+        cmd = 'lame --preset insane ' + wav_file
+
+        sleep(3000)
 
     music_files = [f for f in os.listdir(music_dir) if f.endswith('mp3')]
     music_files_number = len(music_files)
