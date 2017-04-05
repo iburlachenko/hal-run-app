@@ -60,27 +60,29 @@ def group_effects():
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+    sleep(3000)
     clearEffects()
-    sleep(1000)
+    
 
     app_name = 'everloop_demo'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+    sleep(3000)
     clearEffects()
-    sleep(1000)
 
     app_name = 'direction_of_arrival_demo'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+    sleep(3000)
     clearEffects()
-    sleep(1000)
 
     app_name = 'direction_of_arrival_demo'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
+    sleep(3000)
     clearEffects()
 
 @app.route('/cycle')

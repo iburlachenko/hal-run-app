@@ -52,7 +52,11 @@
 		    	var url = ''
 		    	if (this.type === 'micarray_recorder') {
 		    		url = "/voice-record/";
-		    	} else {
+		    	} 
+		    	if (this.type === 'micarray_recorder') {
+		    		url = "/cycle";
+		    	} 
+		    	if (this.type === 'effect') {
 		    		url = "/ef/" + this.type;
 		    	}
 		        $.ajax({
