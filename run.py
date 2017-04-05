@@ -56,6 +56,8 @@ def start_effect(effect_name=None):
 
 @app.route('/voice-record/')
 def voice_record():
+    print('RUN RECORDER ')
+    '''
     clearEffects()
     app_name = 'micarray_recorder'
     if (app_name != app.config['curr_effect']):
@@ -63,7 +65,7 @@ def voice_record():
         cmd = '.' + root_dir + '/static/music/' + app_name
         print('RUN RECORDER ' + cmd)
         get_exitcode_stdout_stderr(cmd)
-        '''
+        
         sleep(12000)
         
         file_name = 'channel_0'
