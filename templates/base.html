@@ -48,11 +48,11 @@
 
 		$(document).ready(function(){
 		    $('a[class~="action"]').on("click", function(){
-		    	debugger
+		    	
 		    	console.log('TYpe is -- ' + this.type);
 		    	var url = ''
 		    	if (this.type === 'micarray_recorder') {
-		    		url = "/voice-record/";
+		    		//url = "/voice-record/";
 		    	} 
 		    	if (this.type === 'cycle') {
 		    		url = "/cycle";
@@ -64,7 +64,7 @@
 		        	url: url,
 		        	success: function(result){
 	        			//$("#div1").html(result);
-	        			console.log("->" + result)
+	        			//console.log("->" + result)
 			    	}
 				});
 		    });

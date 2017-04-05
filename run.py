@@ -32,7 +32,16 @@ def clearEffects():
             print(proc)
             proc.kill()
             os.kill(proc.pid, signal.SIGKILL)
-    
+
+
+def clearAllEffects():
+    allEffects = ['everloop_demo', 'arc_demo', 'direction_of_arrival_demo', 'mic_energy']
+    for eff in allEffects: 
+        for proc in psutil.process_iter():
+            if proc.name() == eff:
+                print(proc)
+                proc.kill()
+                os.kill(proc.pid, signal.SIGKILL)
 
 @app.route('/')
 @app.route('/home')
@@ -56,37 +65,42 @@ def start_effect(effect_name=None):
     return jsonify(status = 'success')
 
 def group_effects():
-    app_name = 'arc_demo'
-    app.config["curr_effect"] = app_name
-    cmd = root_dir + "/static/effects/" + app_name
-    get_exitcode_stdout_stderr(cmd);
-    sleep(3000)
-    clearEffects()
-    
-
     app_name = 'everloop_demo'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
-    sleep(3000)
-    clearEffects()
+    sleep(4000)
+    clearAllEffects()
+    sleep(2000)
 
+    app_name = 'arc_demo'
+    app.config["curr_effect"] = app_name
+    cmd = root_dir + "/static/effects/" + app_name
+    get_exitcode_stdout_stderr(cmd);
+    sleep(4000)
+    clearAllEffects()
+    sleep(2000)
+    
     app_name = 'direction_of_arrival_demo'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
-    sleep(3000)
-    clearEffects()
+    sleep(4000)
+    clearAllEffects()
+    sleep(2000)
 
-    app_name = 'direction_of_arrival_demo'
+    app_name = 'mic_energy'
     app.config["curr_effect"] = app_name
     cmd = root_dir + "/static/effects/" + app_name
     get_exitcode_stdout_stderr(cmd);
-    sleep(3000)
-    clearEffects()
+    sleep(4000)
+    clearAllEffects()
+    sleep(2000)
 
 @app.route('/cycle')
 def cysle_effects():
+    clearAllEffects();
+    '''
     if ( app.config['start_cycle'] == True ):
         app.config['start_cycle'] = False
         print("CYCLE_STOPPED")
@@ -96,7 +110,8 @@ def cysle_effects():
     
     while (app.config['start_cycle'] == True):
         group_effects()
-        
+        sleep(25000)
+    '''    
         
 
 @app.route('/voice-record/')
