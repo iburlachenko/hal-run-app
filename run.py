@@ -28,16 +28,15 @@ def get_exitcode_stdout_stderr(cmd):
 def clearEffects():
     print('Trying to delete -- ' + app.config["curr_effect"])
     #cmd = 'sudo pkill -9 ' + app.config["curr_effect"]
-    cmd='sudo python clear.py'
-    get_exitcode_stdout_stderr(cmd)
-    '''
+
+    
     procName = app.config["curr_effect"]
     for proc in psutil.process_iter():
         if proc.name() == procName:
             print(proc)
             proc.kill()
             os.kill(proc.pid, signal.SIGKILL)
-    '''
+    
     '''
     effect_process = filter(lambda p: p.name == app.config["curr_effect"], psutil.process_iter())
     for p in effect_process:
