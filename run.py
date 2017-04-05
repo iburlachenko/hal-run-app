@@ -60,17 +60,19 @@ def voice_record():
     app_name = 'micarray_recorder'
     if (app_name != app.config['curr_effect']):
         app.config["curr_effect"] = app_name
-        cmd = root_dir + "/static/music/" + app_name
+        cmd = '.' + root_dir + '/static/music/' + app_name
+        print('RUN RECORDER ' + cmd)
         get_exitcode_stdout_stderr(cmd)
-        
+        '''
         sleep(12000)
-
+        
         file_name = 'channel_0'
         wav_file = music_dir + '/'+file_name+'.wav'
         cmd = 'sox -r 16000 -c 1 -e signed -b 16 ' + music_dir + '/mic_16000_s16le_channel_0.raw ' + wav_file
-        
         get_exitcode_stdout_stderr(cmd)
+        
         cmd = 'lame --preset insane ' + wav_file
+        get_exitcode_stdout_stderr(cmd)
 
         sleep(3000)
 
@@ -80,7 +82,7 @@ def voice_record():
                         title = 'Home',
                         music_files_number = music_files_number,
                         music_files = music_files)    
-
+        '''
 @app.route('/play/<filename>')
 def song(filename):
     return render_template('play.html',
