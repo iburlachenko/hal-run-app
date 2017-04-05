@@ -14,6 +14,7 @@ effects_dir = root_dir + '/static/effects'
 
 app = Flask(__name__)
 app.config['curr_effect'] = "None"
+app.config['start_cycle'] = False
 
 def get_exitcode_stdout_stderr(cmd):
     """
@@ -53,6 +54,48 @@ def start_effect(effect_name=None):
         get_exitcode_stdout_stderr(cmd);
 
     return jsonify(status = 'success')
+
+def group_effects():
+    app_name = 'arc_demo'
+    app.config["curr_effect"] = app_name
+    cmd = root_dir + "/static/effects/" + app_name
+    get_exitcode_stdout_stderr(cmd);
+    clearEffects()
+    sleep(1000)
+
+    app_name = 'everloop_demo'
+    app.config["curr_effect"] = app_name
+    cmd = root_dir + "/static/effects/" + app_name
+    get_exitcode_stdout_stderr(cmd);
+    clearEffects()
+    sleep(1000)
+
+    app_name = 'direction_of_arrival_demo'
+    app.config["curr_effect"] = app_name
+    cmd = root_dir + "/static/effects/" + app_name
+    get_exitcode_stdout_stderr(cmd);
+    clearEffects()
+    sleep(1000)
+
+    app_name = 'direction_of_arrival_demo'
+    app.config["curr_effect"] = app_name
+    cmd = root_dir + "/static/effects/" + app_name
+    get_exitcode_stdout_stderr(cmd);
+    clearEffects()
+
+@app.route('/cycle')
+def cysle_effects():
+    if ( app.config['start_cycle'] == True ):
+        app.config['start_cycle'] = False
+        print("CYCLE_STOPPED")
+    else:
+        app.config['start_cycle'] = True
+        print("CYCLE_STARTED")
+    
+    while (app.config['start_cycle'] = True):
+        group_effects()
+        
+        
 
 @app.route('/voice-record/')
 def voice_record():
